@@ -1,0 +1,23 @@
+type TodoList = 
+ service {
+   addList: (text) -> (ListProfile);
+   getAllLists: () -> (Result_1) query;
+   getList: (text) -> (Result) query;
+   whoAmI: () -> (principal) query;
+ };
+type Result_1 = 
+ variant {
+   err: text;
+   ok: vec ListProfile;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok: vec text;
+ };
+type ListProfile = 
+ record {
+   items: vec text;
+   name: text;
+ };
+service : () -> TodoList
