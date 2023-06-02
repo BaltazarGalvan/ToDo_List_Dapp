@@ -94,17 +94,6 @@ actor class TodoList(){
         };
       };
     };
-
-    // let foundList =  existList(caller, listName);
-    // switch (foundList){
-    //   case(#err(msg)){
-    //     return #err(msg);
-    //   };
-    //   case(#ok(msg)){
-    //     return #ok(msg);
-    //   };
-    // };
-
   }; 
 
   public shared query ({caller}) func getAllLists (): async Result.Result<[ListProfile], Text>{
