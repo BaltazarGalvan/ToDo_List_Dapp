@@ -10,8 +10,10 @@ export const idlFactory = ({ IDL }) => {
   const Result = IDL.Variant({ 'ok' : IDL.Vec(IDL.Text), 'err' : IDL.Text });
   const TodoList = IDL.Service({
     'addList' : IDL.Func([IDL.Text], [ListProfile], []),
+    'deleteList' : IDL.Func([IDL.Text], [], []),
     'getAllLists' : IDL.Func([], [Result_1], ['query']),
     'getList' : IDL.Func([IDL.Text], [Result], ['query']),
+    'updateList' : IDL.Func([IDL.Text, IDL.Vec(IDL.Text)], [Result], []),
     'whoAmI' : IDL.Func([], [IDL.Principal], ['query']),
   });
   return TodoList;

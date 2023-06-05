@@ -8,8 +8,10 @@ export type Result_1 = { 'ok' : Array<ListProfile> } |
   { 'err' : string };
 export interface TodoList {
   'addList' : ActorMethod<[string], ListProfile>,
+  'deleteList' : ActorMethod<[string], undefined>,
   'getAllLists' : ActorMethod<[], Result_1>,
   'getList' : ActorMethod<[string], Result>,
+  'updateList' : ActorMethod<[string, Array<string>], Result>,
   'whoAmI' : ActorMethod<[], Principal>,
 }
 export interface _SERVICE extends TodoList {}

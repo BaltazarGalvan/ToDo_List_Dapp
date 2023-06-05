@@ -1,8 +1,10 @@
 type TodoList = 
  service {
    addList: (text) -> (ListProfile);
+   deleteList: (text) -> ();
    getAllLists: () -> (Result_1) query;
    getList: (text) -> (Result) query;
+   updateList: (text, vec text) -> (Result);
    whoAmI: () -> (principal) query;
  };
 type Result_1 = 
