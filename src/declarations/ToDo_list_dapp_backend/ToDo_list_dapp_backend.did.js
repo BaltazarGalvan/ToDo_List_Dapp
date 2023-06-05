@@ -3,6 +3,7 @@ export const idlFactory = ({ IDL }) => {
     'name' : IDL.Text,
     'items' : IDL.Vec(IDL.Text),
   });
+  const Result_2 = IDL.Variant({ 'ok' : IDL.Text, 'err' : IDL.Text });
   const Result_1 = IDL.Variant({
     'ok' : IDL.Vec(ListProfile),
     'err' : IDL.Text,
@@ -10,7 +11,7 @@ export const idlFactory = ({ IDL }) => {
   const Result = IDL.Variant({ 'ok' : IDL.Vec(IDL.Text), 'err' : IDL.Text });
   const TodoList = IDL.Service({
     'addList' : IDL.Func([IDL.Text], [ListProfile], []),
-    'deleteList' : IDL.Func([IDL.Text], [], []),
+    'deleteList' : IDL.Func([IDL.Text], [Result_2], []),
     'getAllLists' : IDL.Func([], [Result_1], ['query']),
     'getList' : IDL.Func([IDL.Text], [Result], ['query']),
     'updateList' : IDL.Func([IDL.Text, IDL.Vec(IDL.Text)], [Result], []),

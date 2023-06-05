@@ -109,7 +109,21 @@ actor class TodoList() {
 
   };
 
-  public shared ({ caller }) func deleteList(listName : Text) : async () {};
+  public shared ({ caller }) func deleteList(listName : Text) : async Result.Result<Text, Text> {
+    try {
+      let foundUser = existCaller(caller);
+      switch (foundUser) {
+        case (#err(msg)) {
+          return #err(msg);
+        };
+        case (#ok(msg)) {
+          let restList = Array.filter<ListProfile>(msg, func(list) { list.name != listName });
+          toDoLists.put(caller, restList);
+          return #ok("");
+        };
+      };
+    } catch (err) { return #err("Unexpected error") };
+  };
 
   // public shared ({ caller }) func deleteItem(listName : Text, item : Nat) : () {};
 
