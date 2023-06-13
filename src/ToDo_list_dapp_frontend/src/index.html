@@ -5,20 +5,45 @@
     <meta name="viewport" content="width=device-width" />
     <title>ToDo_list_dapp</title>
     <base href="/" />
-    <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
+    <link rel="icon" href="./Ustufficon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <main>
-      <img src="logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
-    </main>
+    <div class="header nav_bar">
+      <img src="./U-StuffWTech.png" alt="U-Stuff Logo" class="header_logo" />
+      <button class="btn btn_login disable_when_calling_backend"> IC Login</button>
+      <img src="./motoko.png" alt="motoko logo" class="motoko_logo">
+      <span class="list_name"></span>
+      <img src="./hamburger-menu-icon.png" class="hamburger_icon img_btn disable_when_calling_backend"></img>
+    </div>
+    <div class="items_list_container ">
+        <div class="item_list"></div>
+        <hr>
+        <input class="new_item_input disable_when_calling_backend" type="text" placeholder="New Item">
+        <img class="btn_add_item img_btn disable_when_calling_backend" src="./Add-icon.png" alt="">
+        <button class="btn btn_save disable_when_calling_backend">Save</button>
+    </div>
+    <div class="items_list_container to_disable_lists_items"></div>
+    
+    <div class="list_names_container hidden ">
+        <div class="item_list_name">Your Lists</div>
+        <hr>
+        <input class="new_list_input disable_when_calling_backend" type="text" placeholder="New List">
+        <img class="btn_add_list img_btn disable_when_calling_backend" src="./Add-icon.png" alt="">
+    </div>
+    <div class="list_names_container hidden to_disable_lists_names"></div>
+
+    <footer>
+      <div class="footer">
+        <span>Copyright ©2023 U-Stuff WorkShop</span>
+        <span>Todos los derechos reservados</span>
+      </div>
+    </footer>
   </body>
 </html>

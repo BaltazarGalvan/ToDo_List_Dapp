@@ -1,37 +1,185 @@
 body {
-    font-family: sans-serif;
-    font-size: 1.5rem;
+  background-color: #27374d;
+  font-family: sans-serif;
+  font-size: 1.5rem;
 }
 
-img {
-    max-width: 50vw;
-    max-height: 25vw;
-    display: block;
-    margin: auto;
+.header {
+  background-color: #526d82;
+  display: flex;
+  align-items: center;
 }
 
-form {
-    display: flex;
-    justify-content: center;
-    gap: 0.5em;
-    flex-flow: row wrap;
-    max-width: 40vw;
-    margin: auto;
-    align-items: baseline;
+.header_logo {
+  margin-left: 10px;
+  height: 50px;
+  opacity: 0.8;
+  padding: 5px;
 }
 
-button[type="submit"] {
-    padding: 5px 20px;
-    margin: 10px auto;
-    float: right;
+.btn_login,
+.btn_save {
+  background-color: #27374d;
+  color: #9db2bf;
+  border: 2px solid #9db2bf;
+  border-radius: 25px;
 }
 
-#greeting {
-    margin: 10px auto;
-    padding: 10px 60px;
-    border: 1px solid #222;
+.btn_login {
+  margin-left: 20px;
 }
 
-#greeting:empty {
-    display: none;
+.btn_save {
+  padding: 2px;
+}
+
+.motoko_logo {
+  width: 90px;
+  margin-left: -10px;
+}
+
+.motoko_logo:hover {
+  animation: 1s blink;
+}
+
+.motoko_loader {
+  width: 90px;
+  animation: 1s blink infinite;
+}
+@keyframes blink {
+  25% {
+    opacity: 50%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  75% {
+    opacity: 25%;
+  }
+}
+
+.list_name {
+  position: absolute;
+  right: 55px;
+  font-size: 1rem;
+  color: #dde6ed;
+}
+
+.hamburger_icon {
+  position: absolute;
+  right: 10px;
+  width: 40px;
+}
+
+.img_btn:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.items_list_container,
+.list_names_container {
+  position: absolute;
+  font-size: 1rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 2px;
+}
+
+.items_list_container {
+  background-color: #27374d;
+  box-shadow: 10px 10px 50px #526d82;
+  border: 2px solid #9db2bf;
+  border-radius: 5px;
+  color: #dde6ed;
+  width: 50%;
+  left: 25%;
+  transition: all 0.5s;
+}
+
+.list_names_container {
+  background-color: #9db2bf;
+  box-shadow: 5px 5px 50px #9db2bf;
+  border: 2px solid #526d82;
+  border-radius: 5px;
+  color: #526d82;
+  width: 40%;
+  right: 10px;
+  transition: all 0.5s;
+}
+
+.to_disable_lists_names,
+.to_disable_lists_items {
+  height: 1px;
+  background-color: #dde6ed;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.hidden {
+  right: 4000px;
+  /* visibility: hidden; */
+}
+
+.display_none {
+  display: none;
+}
+
+.list_names_container_visible {
+  left: 5%;
+}
+
+.items_list_container hr,
+.list_names_container hr {
+  margin: 0;
+}
+
+.item_list,
+.item_list_name {
+  font-size: 1rem;
+  color: #dde6ed;
+  display: block;
+}
+
+.item_from_list > *,
+.item_list_name > * {
+  margin-left: 3px;
+}
+
+.new_item_input,
+.new_list_input {
+  display: flexbox;
+  width: 70%;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  margin: 0 5px;
+  background-color: #9db2bf;
+  color: #27374d;
+  box-shadow: 2px 2px 2px #526d82;
+}
+
+.btn_add_item,
+.btn_add_list {
+  border-radius: 50%;
+  background-color: #9db2bf;
+  width: 35px;
+  margin: 10px auto;
+}
+
+.footer {
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  width: 100%;
+  background-color: #9db2bf;
+  color: #27374d;
+}
+
+.footer > * {
+  font-size: 0.8rem;
+  text-align: center;
+  display: block;
+}
+
+.item:hover {
+  cursor: pointer;
 }

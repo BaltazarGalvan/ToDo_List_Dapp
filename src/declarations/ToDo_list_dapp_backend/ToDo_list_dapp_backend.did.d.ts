@@ -11,6 +11,7 @@ export type Result_2 = { 'ok' : string } |
 export interface TodoList {
   'addList' : ActorMethod<[string], ListProfile>,
   'deleteList' : ActorMethod<[string], Result_2>,
+  'getAllListNames' : ActorMethod<[], Result>,
   'getAllLists' : ActorMethod<[], Result_1>,
   'getList' : ActorMethod<[string], Result>,
   'updateList' : ActorMethod<[string, Array<string>], Result>,

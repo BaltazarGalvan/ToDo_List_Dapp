@@ -161,6 +161,27 @@ actor class TodoList() {
 
   };
 
+  public shared query ({ caller }) func getAllListNames() : async Result.Result<[Text], Text> {
+    try {
+      let foundUser = toDoLists.get(caller);
+      switch (foundUser) {
+        case (null) {
+          return #err("No lists where found for this User");
+        };
+        case (?lists) {
+          let listsBuffer = Buffer.Buffer<Text>(0);
+          for (list in lists.vals()) {
+            listsBuffer.add(list.name);
+          };
+          return #ok(Buffer.toArray(listsBuffer));
+        };
+      };
+    } catch (err) {
+      return #err("Unexpected error");
+    };
+
+  };
+
   // public shared ({caller}) func getAllListsTry():async Result.Result <[ListProfile], Text>{
   //   try{
   //     let allListFromCaller = toDoLists.get(caller);
