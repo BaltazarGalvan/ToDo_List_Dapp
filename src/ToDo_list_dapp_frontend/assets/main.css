@@ -18,7 +18,8 @@ body {
 }
 
 .btn_login,
-.btn_save {
+.btn_save,
+.btn_save_list {
   background-color: #27374d;
   color: #9db2bf;
   border: 2px solid #9db2bf;

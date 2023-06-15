@@ -6,11 +6,9 @@ export type Result = { 'ok' : Array<string> } |
   { 'err' : string };
 export type Result_1 = { 'ok' : Array<ListProfile> } |
   { 'err' : string };
-export type Result_2 = { 'ok' : string } |
-  { 'err' : string };
 export interface TodoList {
   'addList' : ActorMethod<[string], ListProfile>,
-  'deleteList' : ActorMethod<[string], Result_2>,
+  'deleteGroupOfLists' : ActorMethod<[Array<string>], string>,
   'getAllListNames' : ActorMethod<[], Result>,
   'getAllLists' : ActorMethod<[], Result_1>,
   'getList' : ActorMethod<[string], Result>,
