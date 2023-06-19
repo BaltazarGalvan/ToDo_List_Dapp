@@ -37,25 +37,35 @@ const callingBackEnd = function (callingBE) {
   ).offsetHeight;
   const listNamesContainer = document.querySelector(".to_disable_lists_names");
   const listItemsContainer = document.querySelector(".to_disable_lists_items");
+
+  listNamesContainer.style.height = callingBE
+    ? `${listNamesContainerHeight}px`
+    : `5px`;
+  listNamesContainer.style.zIndex = callingBE ? 200 : -1;
+  listItemsContainer.style.height = callingBE
+    ? `${listItemsContainerHeight}px`
+    : `1px`;
+  listItemsContainer.style.zIndex = callingBE ? 200 : -1;
+
   if (callingBE) {
     elementesToChange.forEach((element) => {
       element.setAttribute("disabled", true);
     });
     motokoLogo.classList.add("motoko_loader");
-    listNamesContainer.style.height = `${listNamesContainerHeight}px`;
-    listNamesContainer.style.zIndex = 200;
-    listItemsContainer.style.height = `${listItemsContainerHeight}px`;
-    listItemsContainer.style.zIndex = 200;
+    // listNamesContainer.style.height = `${listNamesContainerHeight}px`;
+    // listNamesContainer.style.zIndex = 200;
+    // listItemsContainer.style.height = `${listItemsContainerHeight}px`;
+    // listItemsContainer.style.zIndex = 200;
   }
   if (!callingBE) {
     elementesToChange.forEach((element) => {
       element.removeAttribute("disabled");
     });
     motokoLogo.classList.remove("motoko_loader");
-    listNamesContainer.style.height = `5px`;
-    listNamesContainer.style.zIndex = -1;
-    listItemsContainer.style.height = `1px`;
-    listItemsContainer.style.zIndex = -1;
+    // listNamesContainer.style.height = `5px`;
+    // listNamesContainer.style.zIndex = -1;
+    // listItemsContainer.style.height = `1px`;
+    // listItemsContainer.style.zIndex = -1;
   }
 };
 
@@ -182,8 +192,6 @@ document
     callingBackEnd(false);
     displayItemslistNames();
   });
-
-const deleteList = async function (allListNames) {};
 
 document.querySelector(".btn_save").addEventListener("click", async (e) => {
   const listNameLabel = document.querySelector(".list_name");
