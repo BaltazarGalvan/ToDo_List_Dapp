@@ -123,7 +123,6 @@ document.querySelector(".hamburger_icon").addEventListener("click", () => {
 document
   .querySelector(".item_list_name")
   .addEventListener("click", async (e) => {
-    // await document.querySelector(".btn_save").click();
     const listNameExist = e.target;
     if (!listNameExist.classList.contains("item")) return;
     const listName = listNameExist.textContent;
@@ -185,7 +184,6 @@ document
     });
 
     const listToDoActor = await constructActor();
-    // console.log(listToDelete);
     const deletedResult = await listToDoActor.deleteGroupOfLists(listToDelete);
 
     clearData();
